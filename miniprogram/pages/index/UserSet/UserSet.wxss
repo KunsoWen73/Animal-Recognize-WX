@@ -1,0 +1,55 @@
+/* pages/index/UserSet/UserSet.wxss */
+
+page {
+  background-image: url("https://636c-cloud1-8ghautw7cbf2383e-1324617939.tcb.qcloud.la/Picture/1.jpg?sign=882c68d96c24a81ff26aae25de28a46d&t=1709980721");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 56px !important;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+.container {
+  display: flex;
+}
+.my-text {  
+  font-family: 'MyCustomFont', sans-serif; /* 使用自定义字体，如果加载失败则回退到sans-serif */  
+  font-size: 16px; /* 字体大小 */  
+  color: #333; /* 字体颜色 */  
+  line-height: 1.5; /* 行高 */  
+  text-align: justify; /* 文本对齐方式 */  
+  letter-spacing: 0.5px; /* 字符间距 */  
+}
+
+.weui-input {  
+  width: 750rpx;  
+  height: 63rpx;  
+  display: block;  
+  box-sizing: border-box;  
+  padding: 0 10rpx;  
+  border: 1rpx solid rgb(105, 105, 105); /* 设置边框 */  
+  border-radius: 5rpx; /* 设置圆角 */  
+  background-color: rgb(255, 255, 255); /* 设置背景色 */  
+} 
+
+.custom-button {  
+  background-color: #d6ffd8; /* 背景色 */  
+  color: #000000; /* 文字颜色 */  
+  border-radius: 20rpx; /* 边框圆角 */  
+  padding: 25rpx 40rpx; /* 内边距 */  
+  font-size: 20px; /* 字体大小 */  
+}
+
+
+

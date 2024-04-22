@@ -1,0 +1,27 @@
+/* pages/index/animalDetail/animalDetail.wxss */
+page {
+  padding-top: 54rpx;
+  background-image: url("https://636c-cloud1-8ghautw7cbf2383e-1324617939.tcb.qcloud.la/Picture/1.jpg?sign=882c68d96c24a81ff26aae25de28a46d&t=1709980721");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.animal-detail {  
+  padding: 20rpx;  
+}  
+  
+.animal-detail-image {  
+  width: 100%;  
+  height: 300rpx; /* 或根据实际需要设置 */  
+  margin-bottom: 20rpx;  
+}  
+  
+.animal-detail-name {  
+  font-weight: bold;  
+  font-size: 48rpx;  
+  margin-bottom: 10rpx;  
+}  
+  
+.animal-detail-description {  
+  font-size: 32rpx;  
+  line-height: 24rpx;  
+}

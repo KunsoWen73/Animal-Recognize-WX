@@ -1,0 +1,32 @@
+/* pages/index/userHistory/userHistory.wxss */
+page {
+  background-image: url("https://636c-cloud1-8ghautw7cbf2383e-1324617939.tcb.qcloud.la/Picture/1.jpg?sign=882c68d96c24a81ff26aae25de28a46d&t=1709980721");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.scroll-view-container {  
+  height: 300px; /* 设置滚动区域的高度 */  
+  width: 100%;  
+  /*background-color: rgb(237, 253, 241);   */
+  overflow-y: auto; /* 开启垂直滚动 */  
+}  
+  
+.img-history-item {  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  padding: 10rpx;  
+  border-bottom: 1rpx solid #eee;  
+}  
+  
+.img-history-image {  
+  width: 70%;  
+  height: 350rpx;  
+  object-fit: cover;  
+  margin-bottom: 10rpx;  
+}  
+  
+.img-history-name {  
+  font-size: 30rpx;  
+  color: #333;  
+}

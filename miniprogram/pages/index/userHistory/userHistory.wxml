@@ -1,0 +1,10 @@
+<!--pages/index/userHistory/userHistory.wxml-->
+<scroll-view scroll-y="true" class="scroll-view-container" style="width: 750rpx; height: 1455rpx; display: block; box-sizing: border-box">  
+  <block wx:for="{{imgHistoryList}}" wx:key="index">  
+    <view class="img-history-item">  
+      <image src="{{item.fileID}}" class="img-history-image" mode="aspectFill" />  
+      <text class="img-history-name">识别结果：{{item.imgResult}}</text>
+      <text class="img-history-name">时间：{{item.createdAt}}</text>  
+    </view>  
+  </block>  
+</scroll-view>

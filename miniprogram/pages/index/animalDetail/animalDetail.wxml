@@ -1,0 +1,6 @@
+<!--pages/index/animalDetail/animalDetail.wxml-->
+<view class="animal-detail">  
+  <image class="animal-detail-image" src="{{animal.img}}" mode="aspectFit" />  
+  <text class="animal-detail-name">{{animal.name}}:</text>  
+  <text class="animal-detail-description">{{animal.introduce}}</text>  
+</view>

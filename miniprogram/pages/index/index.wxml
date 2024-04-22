@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="container" style="width: 705rpx; height: 300rpx; display: flex; box-sizing: border-box">
+  <!-- 三个页面的内容区块 -->  
+  <view class="page-content" wx:if="{{currentTab === 'recognize'}}">  
+    <!-- 识别页面的内容 -->
+    <view class="text" style="position: relative; left: 58rpx; top: -37rpx; width: 651rpx; height: 37rpx; display: block; box-sizing: border-box">欢迎您，{{nickname}}</view>
+    <image class="circle-avatar" src="{{avatarUrl}}" style="position: relative; left: 95rpx; top: -13rpx"></image>
+    <view class="title" style="position: relative; left: 380rpx; top: -114rpx; width: 88rpx; height: 58rpx; display: block; box-sizing: border-box">探野</view>
+    <view class="top_tip" style="position: relative; left: 296rpx; top: -152rpx; width: 257rpx; height: 37rpx; display: block; box-sizing: border-box">野生动物识别小程序</view>
+    <view class="image-container" style="width: 785rpx; height: 670rpx; display: block; box-sizing: border-box; position: relative; left: 32rpx; top: -140rpx">  
+      <image style="position: relative; top: -20rpx; width: 785rpx; height: 670rpx; display: inline-block; box-sizing: border-box; left: -20rpx" src="{{imgSrc}}" mode="aspectFit" />
+    </view>
+    <view style="margin-top: 20rpx;"> 
+    <button bindtap="TakePhoto" class="custom-button {{button1Pressed ? 'pressed' : ''}}" style="margin-bottom: 20rpx; width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 23rpx; top: -126rpx; position: relative">拍照</button>
+    <button bindtap="ChooseImage" class="custom-button {{button2Pressed ? 'pressed' : ''}}" style="margin-bottom: 20rpx; width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 23rpx; top: -112rpx; position: relative">从本地选择图片</button>
+    <button bindtap="StartRecognition" class="custom-button {{button3Pressed ? 'pressed' : ''}}" style="width: 477rpx; height: 93rpx; display: block; box-sizing: border-box; left: 23rpx; top: -98rpx; position: relative">开始识别</button>
+    <view class="environment" bindtap="onChangeShowEnvChoose" style="position: relative; left: 358rpx; top: -241rpx; width: 114rpx; height: 32rpx; display: block; box-sizing: border-box">Shark团队</view>
+    </view>  
+  </view>  
+  <view class="page-content" wx:if="{{currentTab === 'atlas'}}" style="position: relative; left: 24rpx; top: -13rpx"> 
+    <view class="text" style="width: 117rpx; height: 37rpx; display: block; box-sizing: border-box; position: relative; left: 317rpx; top: -37rpx">动物图鉴</view> 
+    <!-- 图鉴页面的内容 -->
+    <scroll-view class="atlas-scroll-view" scroll-y="true" style="height: 1265rpx; width: 730rpx; display: block; box-sizing: border-box; left: 24rpx;"> <!-- 设置高度和滚动方向为纵向 -->
+    
+    <view class="animal-list" style="position: relative;  top: -19rpx">  
+      <block wx:for="{{animalList}}" wx:key="index">  
+        <view class="animal-item" bindtap="goToDetail" data-id="{{item.id}}">  
+          <image class="animal-image" src="{{item.img}}" mode="aspectFit" />  
+          <text class="animal-name">{{item.name}}</text>  
+        </view>  
+      </block>  
+    </view>
+  </scroll-view>  
+  </view>  
+  <view class="page-content" wx:if="{{currentTab === 'profile'}}" style="width: 201rpx; height: 112rpx; display: block; box-sizing: border-box">  
+    <!-- 个人页面的内容 -->
+    <view class="avatar-container" style="position: relative; left: -252rpx; top: -53rpx; width: 752rpx; height: 300rpx; display: block; box-sizing: border-box; padding: 20rpx; background-color: white; box-shadow: 0 -10rpx 20rpx -10rpx rgba(0, 0, 0, 0.15), 0 10rpx 20rpx -10rpx rgba(0, 0, 0, 0.15)">
+      <view class="text" style="position: relative; left: 203rpx; top: 96rpx; width: 444rpx; height: 72rpx; display: block; box-sizing: border-box; font-size: 50rpx">{{nickname}}</view>
+      <image class="big-avatar" src="{{avatarUrl}}" style="position: relative; left: 28rpx; top: -11rpx"></image>
+    </view>
+    <button bindtap="navigateToHistory" class="hyperlink-button" style="margin-left: 10rpx; position: relative; left: -260rpx; top: -25rpx; width: 752rpx; height: 96rpx; display: inline-block; box-sizing: border-box"><image src="../../images/草稿箱.png" class="button-icon" />查看历史记录</button>
+    <button bindtap="navigateToUserset" class="hyperlink-button" style="display: inline-block; box-sizing: border-box; position: relative; left: -252rpx; top: -224rpx; width: 752rpx; height: 96rpx"><image src="../../images/设置.png" class="button-icon" />用户设置</button>  
+  </view>  
+    
+  <!-- 自定义固定在底部的tabbar -->  
+  <view class="fixed-tabbar" style="position: fixed; left: 1rpx; top: 1342rpx">  
+    <view class="tab-item {{currentTab === 'recognize' ? 'active' : ''}}" bindtap="switchTab" data-tab="recognize">  
+      <image class="tab-icon" src="../../images/相机.png"></image>  
+      <text class="tab-text">识别</text>  
+    </view>  
+    <view class="tab-item {{currentTab === 'atlas' ? 'active' : ''}}" bindtap="switchTab" data-tab="atlas">  
+      <image class="tab-icon" src="../../images/领养.png"></image>  
+      <text class="tab-text">图鉴</text>  
+    </view>  
+    <view class="tab-item {{currentTab === 'profile' ? 'active' : ''}}" bindtap="switchTab" data-tab="profile">  
+      <image class="tab-icon" src="../../images/我的.png"></image>  
+      <text class="tab-text">个人</text>  
+    </view>  
+  </view>  
+  
+</view>
